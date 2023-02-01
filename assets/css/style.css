@@ -1,0 +1,634 @@
+@charset "UTF-8";
+
+
+
+/* @FONT FACE (enable the use of 'custom fonts' inside your document) */
+
+@font-face {
+  font-family: 'Adventuro';
+  src: url('../fonts/yourfontname/Adventuro.ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Apple';
+  src: url('../fonts/yourfontname/AppleGaramond.ttf'),
+    url('../fonts/yourfontname/yourfontname-italic.woff'),
+    url('../fonts/yourfontname/yourfontname-italic.eot'),
+    url('../fonts/yourfontname/yourfontname-italic.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/yourfontname/yourfontname-italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Your Font Name';
+  src: url('../fonts/yourfontname/yourfontname-italic.woff2'),
+    url('../fonts/yourfontname/yourfontname-italic.woff'),
+    url('../fonts/yourfontname/yourfontname-italic.eot'),
+    url('../fonts/yourfontname/yourfontname-italic.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/yourfontname/yourfontname-italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+  font-display: block;
+}
+
+
+/* VARIABLES */
+
+:root {
+  /* Color settings */
+  --color-background: #ff68b3;
+  --color-text: rgba(0, 0, 0, 1);
+  --color-text-link: rgba(0, 0, 255, 0.8);
+  --color-text-link-hover: rgba(0, 0, 255, 0.4);
+  /* Font settings */
+  --font-family: 'Your Font Name', 'Helvetica', 'Arial', sans-serif;
+  --font-size: 24px;
+  /* Margins settings */
+  --margin: 0rem;
+}
+
+
+
+/* GENERAL STYLES */
+
+html {
+  font: var(--font-size) var(--font-family);
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+
+body {
+  position: relative;
+  background-color: var(--color-background);
+  font: var(--font-size) var(--font-family);
+  color: var(--color-text);
+  width: 100%;
+  height: auto;
+  overflow-y: auto;
+}
+
+header {
+  background: url('/content/Western.jpg');
+  background-size: 100vw;
+  padding-bottom: 3em;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-top: 0.5em;
+}
+
+/* CHAPTERS */
+
+article {
+  padding: 2em;
+}
+
+#preface {
+  background-color: greenyellow;
+}
+
+#preface>h2 span {
+  background-color: #ff68b3;
+}
+
+
+#introduction {
+  background-color: lightblue;
+}
+
+.mask1 {
+  -webkit-mask-image: url(/assets/images/window.png);
+  mask-image: url(/assets/images/window.png);
+  margin: 2em;
+  position: relative;
+  height: 26em;
+  mask-origin: fill-box;
+  mask-position: center;
+
+  -webkit-mask-size: 100%;
+  mask-size: contain;
+  mask-composite: inherit;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+.mask1>img {
+  height: 95vw;
+  width: 95vw;
+
+}
+
+
+@-webkit-keyframes purplegreen {
+  0% {
+    color: greenyellow;
+  }
+
+  50% {
+    color: greenyellow;
+  }
+
+  51% {
+    color: #c782ff;
+  }
+
+  100% {
+    color: #c782ff;
+  }
+}
+
+@-webkit-keyframes purplegreen {
+  0% {
+    color: greenyellow;
+  }
+
+  50% {
+    color: #c782ff;
+  }
+
+  100% {
+    color: greenyellow;
+  }
+}
+
+.marieke {
+  animation-name: purplegreen;
+  /* -webkit-animation-name: purplegreen; */
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 1s;
+}
+
+main {}
+
+a {
+  color: greenyellow;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #c782ff;
+  text-decoration: underline;
+}
+
+a:focus-visible {
+  color: var(--color-text-link-hover);
+  text-decoration: none;
+}
+
+
+.line {
+  width: 30vw;
+  position: fixed;
+  display: table-column;
+  align-content: center;
+  border-bottom: 4px solid black;
+}
+
+.sandwich {
+  position: fixed;
+}
+
+#menu {
+  background-color: aliceblue;
+  width: 100vw;
+  height: fit-content;
+  position: fixed;
+  top: 0;
+  text-align: center;
+  transition: top 0.3s;
+  text-decoration: none;
+}
+
+#menu u {
+  padding-top: 12px;
+}
+
+.content {
+  top: 200px;
+  display: none;
+  overflow: hidden;
+  position: sticky;
+}
+
+h1 {
+  /* h1 style */
+  font-family: 'adventuro';
+  font-size: 5em;
+  text-align: center;
+  color: rgba(255, 255, 255);
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+h2 {
+  /* h2 style */
+  font-family: 'adventuro';
+  font-size: 2em;
+  text-align: center;
+  border-bottom: 3px solid #000;
+  line-height: 0.1em;
+  margin: 10px 0 20px;
+}
+
+h2 span {
+  padding: 0 10px;
+  background: greenyellow;
+}
+
+h3 {
+  /* h3 style */
+}
+
+h4 {
+  /* h4-h5-h6 style */
+  font-family: 'adventuro';
+  text-align: center;
+  font-size: 2em;
+  color: rgba(255, 255, 255);
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+h5 {
+  /* h4-h5-h6 style */
+  font-family: 'apple';
+  text-align: center;
+  font-size: 1.5em;
+}
+
+/* BIG WEBSITE */
+@media all and (min-width: 1000px) {
+
+  p {
+    /* paragraph style */
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-family: 'apple';
+    margin: 10vw;
+    column-count: 2;
+
+  }
+}
+
+/* SMALL WEBSITE */
+@media all and (max-width: 1000px) {
+
+  p {
+    /* paragraph style */
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-family: 'apple';
+    margin: 2rem;
+    column-count: 1;
+  }
+}
+
+ol,
+ul {
+  font-family: 'apple';
+  text-align: left;
+  list-style-type: upper-roman;
+  list-style-position: inside;
+  /* ordered list and unordered list styles */
+}
+
+
+blockquote {
+  /* blockquote element style */
+}
+
+hr {
+  /* horizontal rule style */
+}
+
+
+
+/* PAGE STYLES */
+
+/* page structure */
+
+div.page-wrapper {
+  /* the element that 'wraps' everything */
+  padding: var(--margin);
+}
+
+/* navigation */
+
+nav {}
+
+li :hover {
+  background-color: aliceblue;
+  color: black;
+}
+
+/* content */
+
+main {}
+
+summary {}
+
+
+
+
+
+
+/* GENERAL USABILITY */
+
+/* hide desktop mobile etc */
+
+.desktop {
+  display: block;
+}
+
+.mobile {
+  display: none;
+}
+
+/* if you want to hide something visually but want to keep it readable / accessible for screen readers (sr) */
+
+.sr-only {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
+
+
+
+
+
+
+/* MEDIA QUERIES */
+
+/* responsive typeface */
+
+@media (max-width: 298px) {
+  :root {
+    --font-size: 15px;
+  }
+
+  html,
+  body {
+    font: var(--font-size) var(--font-family);
+  }
+}
+
+@media (min-width: 299px) and (max-width: 339px) {
+  :root {
+    --font-size: 16px;
+  }
+
+  html,
+  body {
+    font: var(--font-size) var(--font-family);
+  }
+}
+
+@media (min-width: 340px) and (max-width: 439px) {
+  :root {
+    --font-size: 17px;
+  }
+
+  html,
+  body {
+    font: var(--font-size) var(--font-family);
+  }
+}
+
+@media (min-width: 440px) and (max-width: 599px) {
+  :root {
+    --font-size: 18px;
+  }
+
+  html,
+  body {
+    font: var(--font-size) var(--font-family);
+  }
+}
+
+@media (min-width: 600px) and (max-width: 779px) {
+  :root {
+    --font-size: 19px;
+  }
+
+  html,
+  body {
+    font: var(--font-size) var(--font-family);
+  }
+}
+
+@media (min-width: 780px) and (max-width: 992px) {
+  :root {
+    --font-size: 20px;
+  }
+
+  html,
+  body {
+    font: var(--font-size) var(--font-family);
+  }
+}
+
+@media (min-width: 993px) and (max-width: 1200px) {
+  :root {
+    --font-size: 22px;
+  }
+
+  html,
+  body {
+    font: var(--font-size) var(--font-family);
+  }
+}
+
+@media (min-width: 1201px) and (max-width: 1319px) {
+  :root {
+    --font-size: 24px;
+  }
+
+  html,
+  body {
+    font: var(--font-size) var(--font-family);
+  }
+}
+
+@media (min-width: 1320px) and (max-width: 1619px) {
+  :root {
+    --font-size: 26px;
+  }
+
+  html,
+  body {
+    font: var(--font-size) var(--font-family);
+  }
+}
+
+@media (min-width: 1620px) and (max-width: 1879px) {
+  :root {
+    --font-size: 28px;
+  }
+
+  html,
+  body {
+    font: var(--font-size) var(--font-family);
+  }
+}
+
+@media (min-width: 1880px) {
+  :root {
+    --font-size: 30px;
+  }
+
+  html,
+  body {
+    font: var(--font-size) var(--font-family);
+  }
+}
+
+
+
+/* website media queries */
+
+@media (max-width: 779px) {
+
+  /* styles for screen sizes 779px, should covers 'mobile' and 'tablet' */
+  /* style this one first and then use the two others to 'override' some styles (exceptions/details) */
+
+
+
+
+
+
+  /* utilities */
+
+  .desktop {
+    display: none !important;
+  }
+
+  .mobile {
+    display: block;
+  }
+
+}
+
+
+
+@media (max-width: 339px) {
+
+  /* use this query to apply style changes to smaller smartphones sizes (like an iPhone 5S or SE 2016), max size of 339px */
+  p {
+    /* paragraph style */
+    font-family: 'apple';
+    margin: 2rem;
+    column-count: 1;
+  }
+}
+
+
+
+@media (max-width: 779px) and (orientation: landscape) {
+
+  /* use this query to apply style changes for 'mobile' screen sizes that are flipped in 'landscape' mode */
+  p {
+    /* paragraph style */
+    font-family: 'apple';
+    margin: 2rem;
+    column-count: 1;
+  }
+}
+
+
+
+@media (min-width: 780px) and (max-width: 992px) {
+
+  /* use this query to apply style for 'small' desktop screens */
+  p {
+    /* paragraph style */
+    font-family: 'apple';
+    margin: 2rem;
+    column-count: 1;
+  }
+}
+
+
+.scroll-left {
+  position: fixed;
+  height: 5.5vh;
+  top: -1px;
+  width: 100vw;
+  /* 121%; */
+  left: -1px;
+  position: fixed;
+  z-index: 12;
+  background-image: linear-gradient(#c782ff, white, greenyellow, lightblue, lightgray, #ff68b3);
+  /* #90eebf; */
+  overflow: hidden;
+}
+
+.scroll-left p {
+  position: relative;
+  align-items: center;
+  display: table-cell;
+  vertical-align: middle;
+  color: black;
+  font-family: 'apple';
+  text-align: left;
+  font-size: 3.5vh;
+  white-space: nowrap;
+
+  /* Starting position */
+  -moz-transform: translateX(100vw);
+  -webkit-transform: translateX(100vw);
+  transform: translateX(100vw);
+
+  /* Apply animation to this element */
+  -moz-animation: scroll-left 25s linear infinite;
+  -webkit-animation: scroll-left 25s linear infinite;
+  animation: scroll-left 25s linear infinite;
+}
+
+/* Move it (define the animation) */
+@-moz-keyframes scroll-left {
+  0% {
+    -moz-transform: translateX(100vw);
+  }
+
+  100% {
+    -moz-transform: translateX(-100%);
+  }
+}
+
+@-webkit-keyframes scroll-left {
+  0% {
+    -webkit-transform: translateX(100vw);
+  }
+
+  100% {
+    -webkit-transform: translateX(-100%);
+  }
+}
+
+@keyframes scroll-left {
+  0% {
+    -moz-transform: translateX(100vw);
+    /* Browser bug fix */
+    -webkit-transform: translateX(100vw);
+    /* Browser bug fix */
+    transform: translateX(100vw);
+  }
+
+  100% {
+    -moz-transform: translateX(-100vw);
+    /* Browser bug fix */
+    -webkit-transform: translateX(-100%);
+    /* Browser bug fix */
+    transform: translateX(-100%);
+  }
+}

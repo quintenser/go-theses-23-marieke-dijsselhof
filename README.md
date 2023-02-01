@@ -1,2 +1,3 @@
-# go-theses-2023-marieke-dijsselhof
- 
+# A boilerplate template with 'boilerplate' CSS
+
+Somewhat 'default' styling
