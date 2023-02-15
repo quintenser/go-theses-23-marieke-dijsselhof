@@ -20,7 +20,7 @@ $(document).ready(function () {
     window.onscroll = function () {
         var currentScrollPos = window.pageYOffset;
         if (prevScrollpos > currentScrollPos) {
-            document.getElementById("menu").style.top = "5.4vh";
+            document.getElementById("menu").style.top = "-6.0vh";
         } else {
             document.getElementById("menu").style.top = "0vh";
         }
@@ -28,3 +28,25 @@ $(document).ready(function () {
     }
 
 });
+
+function show() {
+
+    /* Access image by id and change
+    the display property to block*/
+    document.getElementById('toypopup')
+        .style.display = "block";
+
+    document.getElementById('image')
+        .style.display = "none";
+}
+
+new Vue({
+    el: '#app',
+    data() {
+        return {
+        }
+    },
+    computed: {},
+    methods: {}
+});
+
