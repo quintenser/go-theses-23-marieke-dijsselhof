@@ -166,7 +166,7 @@ i {
 
 .marieke {
   animation-name: purplegreen;
-  /* -webkit-animation-name: purplegreen; */
+  -webkit-animation-name: purplegreen;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-duration: 1s;
 }
