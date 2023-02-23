@@ -4,6 +4,7 @@ $(document).ready(function () {
 
     var coll = document.getElementsByClassName("collapsible");
     var menu = document.getElementById("menu");
+    var content = document.getElementsByClassName("content");
     var i;
 
     for (i = 0; i < coll.length; i++) {
@@ -18,9 +19,12 @@ $(document).ready(function () {
         });
     }
 
-    for (i = 0; i < menu.length; i++) {
-        menu[i].addEventListener("click", function () {
-            this.getElementById.toggle("active");
+    for (i = 0; i < content.length; i++) {
+        console.log("reached")
+        console.log(content)
+        console.log(coll)
+        content[i].addEventListener("click", function () {
+            this.classList.toggle("active");
             var content = this.firstElementChild;
             if (content.style.display === "block") {
             } else {
@@ -33,9 +37,9 @@ $(document).ready(function () {
     window.onscroll = function () {
         var currentScrollPos = window.pageYOffset;
         if (prevScrollpos > currentScrollPos) {
-            document.getElementById("menu").style.top = "-6.0vh";
+           menu.style.top = "-6.0vh";
         } else {
-            document.getElementById("menu").style.top = "5.2vh";
+            menu.style.top = "5.2vh";
         }
         prevScrollpos = currentScrollPos;
     }
