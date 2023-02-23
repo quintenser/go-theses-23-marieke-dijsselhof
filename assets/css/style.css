@@ -41,7 +41,7 @@
 
 :root {
   /* Color settings */
-  --color-background: aliceblue;
+  --color-background: rgb(206, 206, 206);
   --color-text: rgba(0, 0, 0, 1);
   --color-text-link: rgba(0, 0, 255, 0.8);
   --color-text-link-hover: rgba(0, 0, 255, 0.4);
@@ -52,7 +52,94 @@
   --margin: 0rem;
 }
 
+/* Move it (define the animation) */
+@-moz-keyframes scroll-left {
+  0% {
+    -moz-transform: translateX(100vw);
+  }
 
+  100% {
+    -moz-transform: translateX(-100%);
+  }
+}
+
+@-webkit-keyframes scroll-left {
+  0% {
+    -webkit-transform: translateX(100vw);
+  }
+
+  100% {
+    -webkit-transform: translateX(-100%);
+  }
+}
+
+@keyframes scroll-left {
+  0% {
+    -moz-transform: translateX(100vw);
+    /* Browser bug fix */
+    -webkit-transform: translateX(100vw);
+    /* Browser bug fix */
+    transform: translateX(100vw);
+  }
+
+  100% {
+    -moz-transform: translateX(-100vw);
+    /* Browser bug fix */
+    -webkit-transform: translateX(-100%);
+    /* Browser bug fix */
+    transform: translateX(-100%);
+  }
+}
+
+img {
+  width: 30vw;
+  border-style: none;
+  position: absolute;
+  display: block;
+  margin-top: 0rem;
+  transform: translateX(-15vw);
+  object-fit: contain;
+  background-color: #F00;
+}
+
+.scroll-left {
+  position: fixed;
+  height: 5.5vh;
+  top: -1px;
+  width: 100vw;
+  /* 121%; */
+  left: -1px;
+  position: fixed;
+  z-index: 40;
+  animation-name: purplegreenblock;
+  -webkit-animation-name: purplegreenblock;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 1s;
+  /* #90eebf; */
+}
+
+.scroll-left p {
+  position: absolute;
+  align-items: center;
+  display: table-cell;
+  top: -2em;
+  vertical-align: middle;
+  color: black;
+  font-family: 'apple';
+  text-align: left;
+  font-size: 3.5vh;
+  white-space: nowrap;
+
+  /* Starting position */
+  -moz-transform: translateX(100vw);
+  -webkit-transform: translateX(100vw);
+  transform: translateX(100vw);
+
+  /* Apply animation to this element */
+  -moz-animation: scroll-left 25s linear infinite;
+  -webkit-animation: scroll-left 25s linear infinite;
+  animation: scroll-left 25s linear infinite;
+}
 
 /* GENERAL STYLES */
 
@@ -88,11 +175,6 @@ header {
   background-color: white;
 }
 
-#popupimage {
-  color: black;
-  background-color: white;
-}
-
 /* CHAPTERS */
 
 article {
@@ -102,6 +184,24 @@ article {
 i {
   margin-left: 3em;
   font-size: 2em;
+}
+
+.showme {
+  display: none;
+}
+
+.showher :hover {
+  color: black;
+  background-color: #ff68b3;
+}
+
+.showher:hover .showme {
+  display: block;
+}
+
+.video-wrap {
+  position: relative;
+  display: block;
 }
 
 
@@ -114,22 +214,14 @@ i {
   margin-bottom: -3.5em;
   position: relative;
   height: fit-content;
-  mask-origin: fill-box;
+  mask-origin: margin-box;
   mask-position: center;
-
   -webkit-mask-size: 100%;
   mask-size: contain;
-  mask-composite: inherit;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
-
 }
 
-.mask1>img {
-  height: 95vw;
-  width: 95vw;
-
-}
 
 
 @-webkit-keyframes purplegreen {
@@ -164,6 +256,38 @@ i {
   }
 }
 
+@-webkit-keyframes purplegreenblock {
+  0% {
+    background-color: c782ff;
+  }
+
+  50% {
+    background-color: c782ff;
+  }
+
+  51% {
+    background-color: greenyellow;
+  }
+
+  100% {
+    background-color: greenyellow;
+  }
+}
+
+@-webkit-keyframes purplegreenblock {
+  0% {
+    background-color: #c782ff;
+  }
+
+  50% {
+    background-color: greenyellow;
+  }
+
+  100% {
+    background-color: #c782ff;
+  }
+}
+
 .marieke {
   animation-name: purplegreen;
   -webkit-animation-name: purplegreen;
@@ -174,13 +298,18 @@ i {
 main {}
 
 a {
-  color: greenyellow;
+  display: inline-block;
+  color: black;
+  background-color: aliceblue;
   text-decoration: underline;
+  font-style: normal;
 }
 
 a:hover {
-  color: #c782ff;
+  color: greenyellow;
+  background-color: #ff68b3;
   text-decoration: underline;
+  font-style: oblique;
 }
 
 a:focus-visible {
@@ -260,12 +389,14 @@ h1 {
   line-height: 0.8;
 }
 
+
 h2 {
   /* h2 style */
   font-family: 'Germanica';
   color: rgba(255, 255, 255);
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   font-size: 4em;
+  z-index: 20;
   align-content: center;
   text-align: center;
   width: fit-content;
@@ -274,6 +405,7 @@ h2 {
   display: block;
   margin-left: auto;
   margin-right: auto;
+
 }
 
 h2 span {
@@ -309,54 +441,6 @@ h5 {
   font-size: 1.5em;
 }
 
-
-#app {
-  height: 100vh;
-  width: 100vw;
-
-}
-
-.container {
-  top: 0;
-  background: #fff;
-  right: 0;
-  bottom: 0;
-  position: absolute;
-  left: 0;
-  overflow: hidden;
-}
-
-.loader {
-  text-align: center;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-.loader span:nth-child(1n+1) {
-  -webkit-animation-delay: 2.3s;
-  -moz-animation-delay: 8.3s;
-  animation-delay: 3.3s;
-}
-
-#image {
-  display: none;
-  width: 30vw;
-  -moz-animation: loader 3s infinite linear;
-  animation: loader 3s infinite linear;
-  text-align: center;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-}
-
-#image span:nth-child(1n+1) {
-  -webkit-animation-delay: 2.3s;
-  -moz-animation-delay: 8.3s;
-  animation-delay: 3.3s;
-}
 
 @keyframes loader {
   0% {
@@ -426,6 +510,7 @@ h5 {
     column-count: 1;
   }
 }
+
 
 ol,
 ul {
@@ -731,80 +816,5 @@ summary {}
     margin-right: 10vw;
     column-count: 1;
 
-  }
-}
-
-.scroll-left {
-  position: fixed;
-  height: 5.5vh;
-  top: -1px;
-  width: 100vw;
-  /* 121%; */
-  left: -1px;
-  position: fixed;
-  z-index: 12;
-  background-image: linear-gradient(#c782ff, white, greenyellow, lightblue, lightgray, #ff68b3);
-  /* #90eebf; */
-  overflow: hidden;
-}
-
-.scroll-left p {
-  position: relative;
-  align-items: center;
-  display: table-cell;
-  vertical-align: middle;
-  color: black;
-  font-family: 'apple';
-  text-align: left;
-  font-size: 3.5vh;
-  white-space: nowrap;
-
-  /* Starting position */
-  -moz-transform: translateX(100vw);
-  -webkit-transform: translateX(100vw);
-  transform: translateX(100vw);
-
-  /* Apply animation to this element */
-  -moz-animation: scroll-left 25s linear infinite;
-  -webkit-animation: scroll-left 25s linear infinite;
-  animation: scroll-left 25s linear infinite;
-}
-
-/* Move it (define the animation) */
-@-moz-keyframes scroll-left {
-  0% {
-    -moz-transform: translateX(100vw);
-  }
-
-  100% {
-    -moz-transform: translateX(-100%);
-  }
-}
-
-@-webkit-keyframes scroll-left {
-  0% {
-    -webkit-transform: translateX(100vw);
-  }
-
-  100% {
-    -webkit-transform: translateX(-100%);
-  }
-}
-
-@keyframes scroll-left {
-  0% {
-    -moz-transform: translateX(100vw);
-    /* Browser bug fix */
-    -webkit-transform: translateX(100vw);
-    /* Browser bug fix */
-    transform: translateX(100vw);
-  }
-
-  100% {
-    -moz-transform: translateX(-100vw);
-    /* Browser bug fix */
-    -webkit-transform: translateX(-100%);
-    /* Browser bug fix */
-    transform: translateX(-100%);
   }
 }
